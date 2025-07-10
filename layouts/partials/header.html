@@ -99,6 +99,12 @@
 		</script>
 	{{- end -}}
 
+	{{- if .Site.Params.umami | default false -}}
+		<script defer src="https://cloud.umami.is/script.js" 
+			data-website-id="{{ (index .Site.Params.umami 0).websiteId }}">
+		</script>
+	{{- end -}}
+
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
 		{{ range .Site.Params.customCSS }}
